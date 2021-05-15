@@ -18,6 +18,8 @@ try:
         writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
         writer.writeheader()
         for r in fields:
+            if '@' in r['name'] or r['name'].startswith('_'):
+                continue
             if 'esTypes' not in r.keys():
                 r['esTypes'] = ''
             writer.writerow({
