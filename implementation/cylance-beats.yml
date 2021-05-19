@@ -1,0 +1,108 @@
+processors:
+- timestamp:
+    field: "@timestamp"
+    target_field: "@timestamp"
+    layouts: UNIX_MS
+    timezone: UTC
+    ignore_missing: true
+    ignore_failure: true
+- copy_fields:
+    fields:
+    - from: agentversion
+      to: agent.version
+    - from: cylancescore
+      to: event.risk_score
+    - from: description
+      to: vulnerability.description
+    - from: dest_ip
+      to: destination.ip
+    - from: destinationip
+      to: destination.ip
+    - from: destinationport
+      to: destination.port
+    - from: deviceid
+      to: agent.id
+    - from: deviceids
+      to: agent.id
+    - from: devicename
+      to: host.hostname
+    - from: devicenames
+      to: host.hostname
+    - from: dst_ip
+      to: destination.ip
+    - from: event_id
+      to: event.id
+    - from: event_type
+      to: event.type
+    - from: eventid
+      to: event.id
+    - from: filename
+      to: file.name
+    - from: fileowner
+      to: file.owner
+    - from: filepath
+      to: file.path
+    - from: filetype
+      to: file.type
+    - from: instigatingprocessimagefilesha256
+      to: process.hash.sha256
+    - from: instigatingprocessname
+      to: process.name
+    - from: instigatingprocessowner
+      to: user.name
+    - from: ipaddress
+      to: host.ip
+    - from: local_ip
+      to: host.ip
+    - from: loggedonusers
+      to: user.name
+    - from: loginsp
+      to: user.domain
+    - from: macaddress
+      to: host.mac
+    - from: md5
+      to: hash.md5
+    - from: opticsversion
+      to: agent.version
+    - from: os
+      to: os.full
+    - from: path
+      to: file.path
+    - from: policyname
+      to: rule.name
+    - from: port
+      to: source.port
+    - from: processid
+      to: process.pid
+    - from: processname
+      to: process.name
+    - from: product
+      to: event.category
+    - from: service_port
+      to: source.port
+    - from: severity
+      to: event.severity
+    - from: sha256
+      to: hash.sha256
+    - from: sourceip
+      to: source.ip
+    - from: src_ip
+      to: source.ip
+    - from: targetfileowner
+      to: file.owner
+    - from: targetfilepath
+      to: file.path
+    - from: targetfilesha256
+      to: file.hash.sha256
+    - from: targetprocessimagefilesha256
+      to: process.parent.hash.sha256
+    - from: targetprocessname
+      to: process.parent.name
+    - from: targetprocessowner
+      to: process.parent.owner
+    - from: user
+      to: user.full_name
+    - from: username
+      to: user.name
+    ignore_missing: true
+    fail_on_error: false
