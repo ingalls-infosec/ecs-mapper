@@ -77,10 +77,6 @@
           "ignore_above" : 1024,
           "type" : "keyword"
         },
-        "host" : {
-          "ignore_above" : 1024,
-          "type" : "keyword"
-        },
         "client_name" : {
           "ignore_above" : 1024,
           "type" : "keyword"
@@ -412,13 +408,13 @@
       "data_stream": {
         "properties": {
           "dataset": {
-            "type": "constant_keyword"
+            "type": "keyword"
           },
           "namespace": {
-            "type": "constant_keyword"
+            "type": "keyword"
           },
           "type": {
-            "type": "constant_keyword"
+            "type": "keyword"
           }
         }
       },
