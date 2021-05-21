@@ -19,6 +19,84 @@
       }
     ],
     "properties": {
+        "node_name" : {
+          "ignore_above" : 1024,
+          "type" : "keyword"
+        },
+        "dst_ip" : {
+          "type" : "ip",
+          "fields" : {
+            "keyword" : {
+              "ignore_above" : 256,
+              "index" : "false",
+              "type" : "keyword"
+            }
+          }
+        },
+        "src_ip" : {
+          "type" : "ip",
+          "fields" : {
+            "keyword" : {
+              "ignore_above" : 256,
+              "type" : "keyword"
+            }
+          }
+        },
+        "local_ip" : {
+          "type" : "ip",
+          "fields" : {
+            "keyword" : {
+              "ignore_above" : 256,
+              "index" : "false",
+              "type" : "keyword"
+            }
+          }
+        },
+        "event_type" : {
+          "ignore_above" : 1024,
+          "type" : "keyword"
+        },
+        "port" : {
+          "ignore_above" : 1024,
+          "type" : "keyword"
+        },
+        "stream" : {
+          "ignore_above" : 1024,
+          "type" : "keyword"
+        },
+        "dest_ip" : {
+          "type" : "ip",
+          "fields" : {
+            "keyword" : {
+              "ignore_above" : 256,
+              "type" : "keyword"
+            }
+          }
+        },
+        "log_source" : {
+          "ignore_above" : 1024,
+          "type" : "keyword"
+        },
+        "host" : {
+          "ignore_above" : 1024,
+          "type" : "keyword"
+        },
+        "client_name" : {
+          "ignore_above" : 1024,
+          "type" : "keyword"
+        },
+        "node_id" : {
+          "ignore_above" : 1024,
+          "type" : "keyword"
+        },
+        "service_port" : {
+          "ignore_above" : 1024,
+          "type" : "keyword"
+        },
+        "sensor_name" : {
+          "ignore_above" : 1024,
+          "type" : "keyword"
+        },
       "@timestamp": {
         "type": "date"
       },
