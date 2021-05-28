@@ -1,0 +1,146 @@
+[
+  {
+    "rename": {
+      "field": "src_ip",
+      "target_field": "source.ip",
+      "ignore_missing": true
+    }
+  },
+  {
+    "date": {
+      "field": "AlertTime",
+      "target_field": "@timestamp",
+      "formats": [
+        "UNIX_MS"
+      ],
+      "timezone": "UTC",
+      "ignore_failure": true
+    }
+  },
+  {
+    "rename": {
+      "field": "ComputerDnsName",
+      "target_field": "host.name",
+      "ignore_missing": true
+    }
+  },
+  {
+    "set": {
+      "field": "vulnerability.severity",
+      "value": "{{Severity}}",
+      "if": "ctx.Severity != null"
+    }
+  },
+  {
+    "rename": {
+      "field": "Sha1",
+      "target_field": "file.hash.sha1",
+      "ignore_missing": true
+    }
+  },
+  {
+    "rename": {
+      "field": "FileName",
+      "target_field": "file.name",
+      "ignore_missing": true
+    }
+  },
+  {
+    "rename": {
+      "field": "FilePath",
+      "target_field": "file.path",
+      "ignore_missing": true
+    }
+  },
+  {
+    "rename": {
+      "field": "UserName",
+      "target_field": "user.name",
+      "ignore_missing": true
+    }
+  },
+  {
+    "rename": {
+      "field": "ThreatCategory",
+      "target_field": "vulnerability.category",
+      "ignore_missing": true
+    }
+  },
+  {
+    "rename": {
+      "field": "ThreatFamily",
+      "target_field": "vulnerability.classification",
+      "ignore_missing": true
+    }
+  },
+  {
+    "rename": {
+      "field": "ThreatName",
+      "target_field": "vulnerability.description",
+      "ignore_missing": true
+    }
+  },
+  {
+    "rename": {
+      "field": "Source",
+      "target_field": "event.category",
+      "ignore_missing": true
+    }
+  },
+  {
+    "rename": {
+      "field": "Md5",
+      "target_field": "file.hash.md5",
+      "ignore_missing": true
+    }
+  },
+  {
+    "rename": {
+      "field": "Sha256",
+      "target_field": "file.hash.sha256",
+      "ignore_missing": true
+    }
+  },
+  {
+    "rename": {
+      "field": "UserDomain",
+      "target_field": "user.domain",
+      "ignore_missing": true
+    }
+  },
+  {
+    "rename": {
+      "field": "MachineDomain",
+      "target_field": "host.domain",
+      "ignore_missing": true
+    }
+  },
+  {
+    "rename": {
+      "field": "MachineName",
+      "target_field": "host.hostname",
+      "ignore_missing": true
+    }
+  },
+  {
+    "rename": {
+      "field": "InternalIPv4List",
+      "target_field": "host.ip",
+      "ignore_missing": true
+    }
+  },
+  {
+    "rename": {
+      "field": "Description",
+      "target_field": "message",
+      "ignore_missing": true
+    }
+  },
+  {
+    "rename": {
+      "field": "CommandLine",
+      "target_field": "process.command_line",
+      "ignore_missing": true
+    }
+  }
+]
